@@ -39,7 +39,8 @@ dependencies:
   intl: ^0.17.0
   #widget_with_codeview: '1.0.3'
   widget_with_codeview:
-    path: ./widget_with_codeview-master
+    git:
+      url: https://github.com/prafulkadam007/widget_with_codeview-master
 
 dev_dependencies:
   flutter_test:

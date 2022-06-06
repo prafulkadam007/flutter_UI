@@ -437,9 +437,11 @@ packages:
   widget_with_codeview:
     dependency: "direct main"
     description:
-      path: widget_with_codeview-master
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: e93c856be52a90e85c348baaf4abba9827efbf42
+      url: "https://github.com/prafulkadam007/widget_with_codeview-master"
+    source: git
     version: "2.0.1"
   win32:
     dependency: transitive
