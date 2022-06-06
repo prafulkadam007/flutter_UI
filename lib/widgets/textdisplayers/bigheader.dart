@@ -2,14 +2,16 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class BigHeader extends StatelessWidget {
-  final String imageurl;
+  final Image image;
   final String title;
   final TextStyle? titlestyle;
   const BigHeader(
       {Key? key,
       this.title = 'Lorem ipsum dolor sit amet, consectetur',
-      this.imageurl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png',
-      this.titlestyle})
+      /*this.image = Image.network(
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png'),*/
+      this.titlestyle,
+      required this.image})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,7 @@ class BigHeader extends StatelessWidget {
             Row(
               children: const [],
             ),
-            Image.network(
-              imageurl,
-              height: 50,
-            ),
+            image,
             // SizedBox(
             //   height: 6 * unitHeightValue,
             // ),
