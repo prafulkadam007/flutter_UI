@@ -5,14 +5,12 @@ class BigHeader extends StatelessWidget {
   final Image image;
   final String title;
   final TextStyle? titlestyle;
-  const BigHeader(
-      {Key? key,
-      this.title = 'Lorem ipsum dolor sit amet, consectetur',
-      /*this.image = Image.network(
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png'),*/
-      this.titlestyle,
-      required this.image})
-      : super(key: key);
+  const BigHeader({
+    Key? key,
+    this.title = 'Lorem ipsum dolor sit amet, consectetur',
+    required this.image,
+    this.titlestyle,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
