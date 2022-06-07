@@ -49,7 +49,7 @@ class GatePassTicket extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: AppPadding.p10),
           child: Container(
-            height: height,
+            height: height * 0.65,
             margin: EdgeInsets.all((width * 0.015) / expand),
             child: Card(
               
