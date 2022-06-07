@@ -25,12 +25,13 @@ class TextDisplayers extends StatelessWidget {
   late String subTitle;
   late Color? subTitleColor;
   late Color? titleColor;
+  late Image image;
 
   TextDisplayers({
     Key? key,
   }) : super(key: key);
 
-  TextDisplayers.bigHeader({Key? key, required this.title, this.titlestyle})
+  TextDisplayers.bigHeader({Key? key, required this.title, required this.image, this.titlestyle})
       : bigHeader = true,
         super(key: key);
   TextDisplayers.captionBgBlur({Key? key})
@@ -65,6 +66,7 @@ class TextDisplayers extends StatelessWidget {
   Widget build(BuildContext context) {
     if (bigHeader) {
       return BigHeader(
+        image: image,
         title: title,
         titlestyle:
             titlestyle ?? const TextStyle(color: Colors.black, fontSize: 20),

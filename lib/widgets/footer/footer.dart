@@ -32,7 +32,7 @@ class FooterItem extends StatelessWidget {
             onclick();
           },
         ),
-        if (!showline)
+        if (showline)
           const SizedBox(
             // width: 10,
             child: AutoSizeText(
@@ -62,7 +62,7 @@ class Footer extends StatelessWidget {
         decoration:
             const BoxDecoration(color: Color.fromARGB(255, 225, 225, 225)),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             assets != null
                 ? const SizedBox(
