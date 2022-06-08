@@ -334,7 +334,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SizedBox(
                 height: 200,
                 width: 500,
-                child: TextDisplayers.bigHeader(title: 'Widget With Code View'),
+                child: TextDisplayers.bigHeader(
+                  image: Image.asset(
+                    'assets/images/pcfc_logo.jpeg',
+                  ),
+                  title: 'Widget With Code View'
+                  ),
               ),
               sourceFilePath: 'sample/bigHeader.dart',
               // codeLinkPrefix: 'https://google.com?q=',
