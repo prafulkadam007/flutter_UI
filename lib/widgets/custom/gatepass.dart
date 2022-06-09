@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/resources/font_manager.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
+import 'package:flutter_ui_lib/widgets/textdisplayers/text_with_label.dart';
 
 import '../../resources/values_manager.dart';
 
@@ -18,7 +19,8 @@ class GatePassTicket extends StatelessWidget {
   final TextStyle? daystyle;
   final double expand;
   final double? height;
-
+  final String passName;
+  final TextStyle? passStyle;
   final TextStyle? monthstyle;
 
   const GatePassTicket({
@@ -35,7 +37,10 @@ class GatePassTicket extends StatelessWidget {
     this.weekday,
     this.weekdaystyle,
     this.daystyle,
-    this.monthstyle, this.height,
+    this.monthstyle,
+    this.height,
+    this.passName = "Visitor Pass",
+    this.passStyle
   }) : super(key: key);
 
   @override
@@ -52,7 +57,6 @@ class GatePassTicket extends StatelessWidget {
             height: height * 0.65,
             margin: EdgeInsets.all((width * 0.015) / expand),
             child: Card(
-              
               margin: EdgeInsets.all((width * 0.05) / expand),
               color: Colors.white,
               elevation: AppSize.s5,
@@ -66,10 +70,10 @@ class GatePassTicket extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: (height * 0.03) / expand),
+                    SizedBox(height: (height * 0.1) / expand),
                     Container(
                       width: (width * 0.25) / expand,
-                      height:  (width * 0.25) / expand,
+                      height: (width * 0.25) / expand,
                       decoration: BoxDecoration(
                         color: Colors.grey,
                         image: DecorationImage(
@@ -84,36 +88,32 @@ class GatePassTicket extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: (height * 0.02) / expand),
-                    Text(
-                      name,
-                      style: namestyle ??
-                          TextStyle(
-                              fontSize: (width * 0.045) / expand,
-                              color: Colors.black),
-                      // TextStyle(
-                      //   color: Colors.black,
-                      //   fontWeight: FontWeight.w400,
-                      //   fontSize: FontSize.s20,
-                      // ),
+                    SizedBox(height: (height * 0.1) / expand),
+                    TextWithLabel(
+                      title: name,
+                      titlestyle: namestyle,
+                      desc: passName,
+                      descStyle: passStyle
                     ),
-                    SizedBox(height: (height * 0.01) / expand),
-                    Text(
-                      "Visitor Pass",
-                      style: TextStyle(
-                        fontSize: (width * 0.07) / expand,
-                        fontStyle: FontStyle.normal,
-                      ).copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      // TextStyle(
-                      //   color: Colors.black,
-                      //   fontWeight: FontWeight.w600,
-                      //   fontSize: FontSize.s29,
-                      // ),
-                    ),
-                    SizedBox(height: (height * 0.05) / expand),
+                    // Text(
+                    //   name,
+                    //   style: namestyle ??
+                    //       TextStyle(
+                    //           fontSize: (width * 0.045) / expand,
+                    //           color: Colors.black),
+                    // ),
+                    // SizedBox(height: (height * 0.01) / expand),
+                    // Text(
+                    //   "Visitor Pass",
+                    //   style: TextStyle(
+                    //     fontSize: (width * 0.07) / expand,
+                    //     fontStyle: FontStyle.normal,
+                    //   ).copyWith(
+                    //     color: Colors.black,
+                    //     fontWeight: FontWeight.w600,
+                    //   ),
+                    // ),
+                    SizedBox(height: (height * 0.15) / expand),
                     const Divider(
                       color: Colors.grey,
                       thickness: 1,
@@ -134,38 +134,35 @@ class GatePassTicket extends StatelessWidget {
                         SizedBox(
                           width: (width * 0.05) / expand,
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(company,
-                                style: companystyle ??
-                                    TextStyle(
-                                            fontSize: (width * 0.05) / expand,
-                                            fontWeight: FontWeight.w300)
-                                        .copyWith(
-                                            fontWeight: FontWeightManager.bold,
-                                            color: Colors.black)
-                                // TextStyle(
-                                //   color: Colors.black,
-                                //   fontWeight: FontWeight.w600,
-                                //   fontSize: FontSize.s18,
-                                // ),
-                                ),
-                            SizedBox(height: (height * 0.01) / expand),
-                            Text(subtext,
-                                style: subtextstyle ??
-                                    TextStyle(
-                                        fontSize: (width * 0.04) / expand,
-                                        fontWeight: FontWeight.w300)
-                                // TextStyle(
-                                //   color: Colors.black,
-                                //   fontWeight: FontWeight.w400,
-                                //   fontSize: FontSize.s16,
-                                // ),
-                                ),
-                          ],
+                        TextWithLabel(
+                          title: company,
+                          titlestyle: companystyle,
+                          desc: subtext,
+                          descStyle: subtextstyle,
                         )
+                        // Column(
+                        //   mainAxisAlignment: MainAxisAlignment.start,
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+
+                        //     Text(company,
+                        //         style: companystyle ??
+                        //             TextStyle(
+                        //                     fontSize: (width * 0.05) / expand,
+                        //                     fontWeight: FontWeight.w300)
+                        //                 .copyWith(
+                        //                     fontWeight: FontWeightManager.bold,
+                        //                     color: Colors.black)
+                        //         ),
+                        //     SizedBox(height: (height * 0.01) / expand),
+                        //     Text(subtext,
+                        //         style: subtextstyle ??
+                        //             TextStyle(
+                        //                 fontSize: (width * 0.04) / expand,
+                        //                 fontWeight: FontWeight.w300)
+                        //         ),
+                        //   ],
+                        // )
                       ],
                     ),
                     SizedBox(height: (height * 0.01) / expand),

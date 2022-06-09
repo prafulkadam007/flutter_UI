@@ -84,10 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
               title: 'Vistor pass',
               description: 'Custom ui for visitor pass ',
               child: SizedBox(
-                // height: 600,
-                width: 500,
+                height: 500,
+                width: 400,
                 child: GatePassTicket(
-                  expand: 2,
+                  expand: 3,
                   height: 500,
                   daystyle: const TextStyle(fontSize: 20),
                   monthstyle: const TextStyle(fontSize: 20),
@@ -97,9 +97,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   imageurl:
                       'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
                   subtext: 'Ajman, United Arab Emirates',
-                  subtextstyle: const TextStyle(fontSize: 15),
+                  subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
                   name: 'Abulebbeh Aleks',
+                  namestyle:  const TextStyle(fontSize: 20),
                   date: DateTime.now(),
+                  passName: "Visitor Pass",
+                  passStyle: const TextStyle(
+                        fontSize: 25,
+                        fontStyle: FontStyle.normal,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      )
+
                 ),
               ),
               sourceFilePath: 'sample/vistorpass.dart',
@@ -258,12 +267,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 50,
                   widgets: [
                     FooterItem(
+                      showline: true,
                       title: "About us",
                       onclick: () {},
                     ),
                     FooterItem(
                       title: 'Terms & Conditions',
-                      showline: true,
                       onclick: () {},
                     )
                   ],
