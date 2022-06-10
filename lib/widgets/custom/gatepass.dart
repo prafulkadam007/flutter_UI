@@ -65,11 +65,11 @@ class GatePassTicket extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all((width * 0.06) / expand),
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  // mainAxisSize: MainAxisSize.min,
+                  // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: (height * 0.1) / expand),
+                    SizedBox(height: (height * 0.3) / expand),
                     Container(
                       width: (width * 0.25) / expand,
                       height: (width * 0.25) / expand,
@@ -87,7 +87,7 @@ class GatePassTicket extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: (height * 0.1) / expand),
+                    SizedBox(height: (height * 0.2) / expand),
                     TextWithLabel(
                       title: name,
                       titlestyle: namestyle,
@@ -113,7 +113,7 @@ class GatePassTicket extends StatelessWidget {
                     //     fontWeight: FontWeight.w600,
                     //   ),
                     // ),
-                    SizedBox(height: (height * 0.15) / expand),
+                    // SizedBox(height: (height * 0.15) / expand),
                     const Divider(
                       color: Colors.grey,
                       thickness: 1,
@@ -166,7 +166,7 @@ class GatePassTicket extends StatelessWidget {
                         // )
                       ],
                     ),
-                    SizedBox(height: (height * 0.01) / expand),
+                    // SizedBox(height: (height * 0.01) / expand),
                   ],
                 ),
               ),

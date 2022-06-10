@@ -25,42 +25,42 @@ class TextWithLabel extends StatelessWidget {
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
     double width = MediaQuery.of(context).size.width;
 
-    return Expanded(
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: align == TextAlign.center ? CrossAxisAlignment.center : CrossAxisAlignment.start,
-        children: [
-          if (label != null)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 5),
-              child: AutoSizeText(
-                label!,
-                maxLines: 1,
-                style: labelStyle ??
-                    TextStyle(fontSize: width * 0.01, color: Colors.black54),
-              ),
+    return Column(
+      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: align == TextAlign.center
+          ? CrossAxisAlignment.center
+          : CrossAxisAlignment.start,
+      children: [
+        if (label != null)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 5),
+            child: AutoSizeText(
+              label!,
+              maxLines: 1,
+              style: labelStyle ??
+                  TextStyle(fontSize: width * 0.01, color: Colors.black54),
             ),
+          ),
+        AutoSizeText(
+          title,
+          maxLines: 2,
+          style: titlestyle ??
+              TextStyle(
+                  fontSize: width * 0.05,
+                  fontWeight: FontWeight.w500,
+                  height: 1.5),
+        ),
+        if (desc != null)
           AutoSizeText(
-            title,
+            desc!,
             maxLines: 2,
-            style: titlestyle ??
+            style: descStyle ??
                 TextStyle(
-                    fontSize: width * 0.04,
-                    fontWeight: FontWeight.w500,
+                    fontSize: (width * 0.04),
+                    fontWeight: FontWeight.w300,
                     height: 1.5),
           ),
-          if (desc != null)
-            AutoSizeText(
-              desc!,
-              maxLines: 2,
-              style: descStyle ??
-                  TextStyle(
-                      fontSize: (width * 0.04),
-                      fontWeight: FontWeight.w300,
-                      height: 1.5),
-            ),
-        ],
-      ),
+      ],
     );
   }
 }
