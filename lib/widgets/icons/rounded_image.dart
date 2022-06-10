@@ -1,33 +1,16 @@
 import 'package:flutter/material.dart';
 
-enum ImageType {
-  network,
-  asset,
-}
-
 class RoundedImage extends StatelessWidget {
   final Color bgColor;
   final double size;
-  final ImageType imageType;
-  final String? imageUrl;
-  final String? assetPath;
+  final DecorationImage image;
 
   const RoundedImage({
     Key? key,
     this.bgColor = Colors.grey,
     required this.size,
-    this.imageUrl,
-    this.assetPath,
-    required this.imageType,
+    required this.image,
   }) : super(key: key);
-
-  ImageProvider _renderImage() {
-    if (imageType == ImageType.network) {
-      return NetworkImage(imageUrl!);
-    } else {
-      return AssetImage(assetPath!);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +19,7 @@ class RoundedImage extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         color: bgColor,
-        image: DecorationImage(
-          image: _renderImage(),
-          fit: BoxFit.cover,
-        ),
+        image: image,
         borderRadius: BorderRadius.all(
           Radius.circular(size / 2),
         ),

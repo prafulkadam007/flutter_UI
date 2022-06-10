@@ -70,10 +70,11 @@ class GatePassTicket extends StatelessWidget {
                   children: <Widget>[
                     SizedBox(height: (height * 0.03) / expand),
                     RoundedImage(
-                      size: (width * 0.25) / expand,
-                      imageType: ImageType.network,
-                      imageUrl: imageurl,
-                    ),
+                        size: (width * 0.25) / expand,
+                        image: DecorationImage(
+                          image: NetworkImage(imageurl),
+                          fit: BoxFit.cover,
+                        )),
                     SizedBox(height: (height * 0.02) / expand),
                     Text(
                       name,
