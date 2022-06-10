@@ -4,15 +4,21 @@ import 'package:flutter/material.dart';
 class TextWithLabel extends StatelessWidget {
   final String title;
   final TextStyle? titlestyle;
-  final String desc;
+  final String? desc;
   final TextStyle? descStyle;
-  
+  final String? label;
+  final TextStyle? labelStyle;
+  final TextAlign? align;
+
   const TextWithLabel({
     Key? key,
     required this.title,
     this.titlestyle,
-    required this.desc,
+    this.desc,
     this.descStyle,
+    this.label,
+    this.labelStyle,
+    this.align,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -21,24 +27,38 @@ class TextWithLabel extends StatelessWidget {
 
     return Expanded(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: align == TextAlign.center ? CrossAxisAlignment.center : CrossAxisAlignment.start,
         children: [
+          if (label != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 5),
+              child: AutoSizeText(
+                label!,
+                maxLines: 1,
+                style: labelStyle ??
+                    TextStyle(fontSize: width * 0.01, color: Colors.black54),
+              ),
+            ),
           AutoSizeText(
             title,
-            maxLines: 1,
+            maxLines: 2,
             style: titlestyle ??
                 TextStyle(
-                    fontSize: width * 0.04, fontWeight: FontWeight.w500),
+                    fontSize: width * 0.04,
+                    fontWeight: FontWeight.w500,
+                    height: 1.5),
           ),
-           AutoSizeText(
-            desc,
-            maxLines: 1,
-            style: descStyle ??
-                TextStyle(
-                    fontSize: (width * 0.04),
-                    fontWeight: FontWeight.w300),
-          ),
+          if (desc != null)
+            AutoSizeText(
+              desc!,
+              maxLines: 2,
+              style: descStyle ??
+                  TextStyle(
+                      fontSize: (width * 0.04),
+                      fontWeight: FontWeight.w300,
+                      height: 1.5),
+            ),
         ],
       ),
     );

@@ -88,10 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 400,
                 child: GatePassTicket(
                   expand: 3,
-                  height: 500,
-                  daystyle: const TextStyle(fontSize: 20),
-                  monthstyle: const TextStyle(fontSize: 20),
-                  weekdaystyle: const TextStyle(fontSize: 20),
+                  // height: 500,
+                  daystyle: const TextStyle(fontSize: 18),
+                  monthstyle: const TextStyle(fontSize: 10),
+                  weekdaystyle: const TextStyle(fontSize: 10),
                   company: 'Anteriorsoft Pvt Ltd',
                   companystyle: const TextStyle(fontSize: 20),
                   imageurl:
@@ -99,14 +99,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   subtext: 'Ajman, United Arab Emirates',
                   subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
                   name: 'Abulebbeh Aleks',
-                  namestyle:  const TextStyle(fontSize: 20),
+                  namestyle:  const TextStyle(fontSize: 16),
                   date: DateTime.now(),
                   passName: "Visitor Pass",
                   passStyle: const TextStyle(
                         fontSize: 25,
-                        fontStyle: FontStyle.normal,
+                        // fontStyle: FontStyle.normal,
                         color: Colors.black,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
+                        // height: 1.5
                       )
 
                 ),
@@ -124,11 +125,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     date: DateTime.now(),
                     color: Colors.white,
                     daystyle:
-                        const TextStyle(fontSize: 20, color: Colors.white),
+                        const TextStyle(fontSize: 18, color: Colors.white),
                     monthstyle:
-                        const TextStyle(fontSize: 20, color: Colors.white),
+                        const TextStyle(fontSize: 10, color: Colors.white),
                     weekdaystyle:
-                        const TextStyle(fontSize: 20, color: Colors.white),
+                        const TextStyle(fontSize: 10, color: Colors.white),
                   ),
                 ),
               ),
@@ -184,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
               description:
                   'this widget is to display vehicle details. pass required data',
               child: SizedBox(
-                height: 250,
+                height: 300,
                 width: 400,
                 child: VehicleDetails(
                   ownername: 'abul',

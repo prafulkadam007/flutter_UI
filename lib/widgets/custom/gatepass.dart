@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_lib/resources/font_manager.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
 import 'package:flutter_ui_lib/widgets/textdisplayers/text_with_label.dart';
 
@@ -93,7 +92,8 @@ class GatePassTicket extends StatelessWidget {
                       title: name,
                       titlestyle: namestyle,
                       desc: passName,
-                      descStyle: passStyle
+                      descStyle: passStyle,
+                      align: TextAlign.center,
                     ),
                     // Text(
                     //   name,
@@ -135,6 +135,7 @@ class GatePassTicket extends StatelessWidget {
                           width: (width * 0.05) / expand,
                         ),
                         TextWithLabel(
+                          // label: 'Company',
                           title: company,
                           titlestyle: companystyle,
                           desc: subtext,
