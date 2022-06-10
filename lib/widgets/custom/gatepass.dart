@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/resources/font_manager.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
+import 'package:flutter_ui_lib/widgets/icons/rounded_icon.dart';
+import 'package:flutter_ui_lib/widgets/icons/rounded_image.dart';
 
 import '../../resources/values_manager.dart';
 
@@ -35,7 +37,8 @@ class GatePassTicket extends StatelessWidget {
     this.weekday,
     this.weekdaystyle,
     this.daystyle,
-    this.monthstyle, this.height,
+    this.monthstyle,
+    this.height,
   }) : super(key: key);
 
   @override
@@ -49,10 +52,9 @@ class GatePassTicket extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: AppPadding.p10),
           child: Container(
-            height: height * 0.65,
+            //height: height * 0.65,
             margin: EdgeInsets.all((width * 0.015) / expand),
             child: Card(
-              
               margin: EdgeInsets.all((width * 0.05) / expand),
               color: Colors.white,
               elevation: AppSize.s5,
@@ -67,23 +69,12 @@ class GatePassTicket extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(height: (height * 0.03) / expand),
-                    Container(
-                      width: (width * 0.25) / expand,
-                      height:  (width * 0.25) / expand,
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
+                    RoundedImage(
+                        size: (width * 0.25) / expand,
                         image: DecorationImage(
                           image: NetworkImage(imageurl),
                           fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.all(
-                            Radius.circular((width * 0.125) / expand)),
-                        border: Border.all(
-                          color: Colors.black26,
-                          width: 2.0,
-                        ),
-                      ),
-                    ),
+                        )),
                     SizedBox(height: (height * 0.02) / expand),
                     Text(
                       name,
@@ -175,22 +166,14 @@ class GatePassTicket extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          width: (width * 0.2) / expand,
-          height: (width * 0.2) / expand,
-          decoration: const ShapeDecoration(
-            shape: CircleBorder(),
-            color: Colors.transparent,
+        RoundedIcon(
+          icon: Icon(
+            Icons.check_circle,
+            color: Colors.green,
+            size: (width * 0.18) / expand,
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(1),
-            child: Icon(
-              Icons.check_circle,
-              color: Colors.green,
-              size: (width * 0.18) / expand,
-            ),
-          ),
-        )
+          size: (width * 0.2) / expand,
+        ),
       ],
     );
   }
