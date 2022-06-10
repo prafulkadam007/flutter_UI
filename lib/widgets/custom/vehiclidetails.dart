@@ -47,7 +47,7 @@ class VehicleDetails extends StatelessWidget {
             TextWithLabel(
               title: vehicleNumberPlate,
               titlestyle: vehicleNumberPlatestyle ??
-                  TextStyle(fontSize: width * 0.045, color: Colors.black)
+                  TextStyle(fontSize: width * 0.04, color: Colors.black)
                       .copyWith(
                           color: Colors.black, fontWeight: FontWeight.bold),
               desc: 'Owned by $ownername',
@@ -67,6 +67,7 @@ class VehicleDetails extends StatelessWidget {
             //             .copyWith(color: Colors.black, height: 1.7)),
             TextWithLabel(
               label: 'Registered Date',
+              labelStyle:TextStyle(fontSize: width * 0.04, color: Colors.black, height: 4),
               title: registeredDate,
               titlestyle: registeredDatestyle,
               // titlestyle: vehicleNumberPlatestyle ??
@@ -89,6 +90,7 @@ class VehicleDetails extends StatelessWidget {
             //                 height: 1.5)),
             TextWithLabel(
               label: 'Vehicle model',
+              labelStyle:TextStyle(fontSize: width * 0.04, color: Colors.black, height: 4),
               title: vechilemodel,
               titlestyle: vechilemodelstyle,
             ),

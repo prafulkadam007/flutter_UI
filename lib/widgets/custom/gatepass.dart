@@ -113,7 +113,7 @@ class GatePassTicket extends StatelessWidget {
                     //     fontWeight: FontWeight.w600,
                     //   ),
                     // ),
-                    SizedBox(height: (height * 0.05) / expand),
+                    SizedBox(height: (height * 0.04) / expand),
                     const Divider(
                       color: Colors.grey,
                       thickness: 1,

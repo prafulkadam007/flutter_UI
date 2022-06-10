@@ -38,7 +38,7 @@ class TextWithLabel extends StatelessWidget {
               label!,
               maxLines: 1,
               style: labelStyle ??
-                  TextStyle(fontSize: width * 0.01, color: Colors.black54),
+                  TextStyle(fontSize: width * 0.03, color: Colors.black54),
             ),
           ),
         AutoSizeText(
@@ -56,9 +56,10 @@ class TextWithLabel extends StatelessWidget {
             maxLines: 2,
             style: descStyle ??
                 TextStyle(
+                    color: Colors.black,
                     fontSize: (width * 0.04),
-                    fontWeight: FontWeight.w300,
-                    height: 1.5),
+                    fontWeight: FontWeight.w400,
+                    height: 2),
           ),
       ],
     );
