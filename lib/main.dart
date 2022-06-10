@@ -11,6 +11,8 @@ import 'package:flutter_ui_lib/widgets/form/blurbutton.dart';
 import 'package:flutter_ui_lib/widgets/form/button.dart';
 import 'package:flutter_ui_lib/widgets/form/dropdown.dart';
 import 'package:flutter_ui_lib/widgets/form/textfiled.dart';
+import 'package:flutter_ui_lib/widgets/icons/rounded_icon.dart';
+import 'package:flutter_ui_lib/widgets/icons/rounded_image.dart';
 import 'package:flutter_ui_lib/widgets/listviewitems/listitem.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
 
@@ -345,11 +347,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 200,
                 width: 500,
                 child: TextDisplayers.bigHeader(
-                  image: Image.asset(
-                    'assets/images/pcfc_logo.jpeg',
-                  ),
-                  title: 'Widget With Code View'
-                  ),
+                    image: Image.asset(
+                      'assets/images/pcfc_logo.jpeg',
+                    ),
+                    title: 'Widget With Code View'),
               ),
               sourceFilePath: 'sample/bigHeader.dart',
               // codeLinkPrefix: 'https://google.com?q=',
@@ -395,6 +396,53 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               sourceFilePath: 'sample/requestlistiem.dart',
               // codeLinkPrefix: 'https://google.com?q=',
+            ),
+            const WidgetWithCodeView(
+              title: 'Rounded Icon',
+              description: '',
+              child: SizedBox(
+                width: 200,
+                child: RoundedIcon(
+                  icon: Icon(
+                    Icons.check_circle,
+                    color: Colors.green,
+                    size: 100,
+                  ),
+                  size: 90,
+                ),
+              ),
+              sourceFilePath: 'sample/roundedIcon.dart',
+            ),
+            const WidgetWithCodeView(
+              title: 'Rounded Image',
+              description: 'Network image',
+              child: SizedBox(
+                width: 200,
+                child: RoundedImage(
+                  size: 200,
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              sourceFilePath: 'sample/roundedImage.dart',
+            ),
+            const WidgetWithCodeView(
+              title: 'Rounded Image',
+              description: 'Asset image',
+              child: SizedBox(
+                width: 200,
+                child: RoundedImage(
+                  size: 200,
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/app_bar_logo.png'),
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              sourceFilePath: 'sample/roundedImage.dart',
             ),
           ],
         ));
