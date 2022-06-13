@@ -86,22 +86,32 @@ class _MyHomePageState extends State<MyHomePage> {
               title: 'Vistor pass',
               description: 'Custom ui for visitor pass ',
               child: SizedBox(
-                // height: 600,
-                width: 500,
+                height: 500,
+                width: 400,
                 child: GatePassTicket(
-                  expand: 2,
-                  height: 500,
-                  daystyle: const TextStyle(fontSize: 20),
-                  monthstyle: const TextStyle(fontSize: 20),
-                  weekdaystyle: const TextStyle(fontSize: 20),
+                  expand: 3,
+                  // height: 500,
+                  daystyle: const TextStyle(fontSize: 18),
+                  monthstyle: const TextStyle(fontSize: 10),
+                  weekdaystyle: const TextStyle(fontSize: 10),
                   company: 'Anteriorsoft Pvt Ltd',
                   companystyle: const TextStyle(fontSize: 20),
                   imageurl:
                       'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
                   subtext: 'Ajman, United Arab Emirates',
-                  subtextstyle: const TextStyle(fontSize: 15),
+                  subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
                   name: 'Abulebbeh Aleks',
+                  namestyle:  const TextStyle(fontSize: 16),
                   date: DateTime.now(),
+                  passName: "Visitor Pass",
+                  passStyle: const TextStyle(
+                        fontSize: 25,
+                        // fontStyle: FontStyle.normal,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        // height: 1.5
+                      )
+
                 ),
               ),
               sourceFilePath: 'sample/vistorpass.dart',
@@ -117,11 +127,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     date: DateTime.now(),
                     color: Colors.white,
                     daystyle:
-                        const TextStyle(fontSize: 20, color: Colors.white),
+                        const TextStyle(fontSize: 18, color: Colors.white),
                     monthstyle:
-                        const TextStyle(fontSize: 20, color: Colors.white),
+                        const TextStyle(fontSize: 10, color: Colors.white),
                     weekdaystyle:
-                        const TextStyle(fontSize: 20, color: Colors.white),
+                        const TextStyle(fontSize: 10, color: Colors.white),
                   ),
                 ),
               ),
@@ -177,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
               description:
                   'this widget is to display vehicle details. pass required data',
               child: SizedBox(
-                height: 250,
+                height: 300,
                 width: 400,
                 child: VehicleDetails(
                   ownername: 'abul',
@@ -260,12 +270,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 50,
                   widgets: [
                     FooterItem(
+                      showline: true,
                       title: "About us",
                       onclick: () {},
                     ),
                     FooterItem(
                       title: 'Terms & Conditions',
-                      showline: true,
                       onclick: () {},
                     )
                   ],
