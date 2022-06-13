@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/sampledata/data.dart';
+import 'package:flutter_ui_lib/widgets/cardviews/card_view.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
 import 'package:flutter_ui_lib/widgets/custom/gatepass.dart';
 import 'package:flutter_ui_lib/widgets/custom/numberplate.dart';
@@ -101,17 +102,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   subtext: 'Ajman, United Arab Emirates',
                   subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
                   name: 'Abulebbeh Aleks',
-                  namestyle:  const TextStyle(fontSize: 16),
+                  namestyle: const TextStyle(fontSize: 16),
                   date: DateTime.now(),
                   passName: "Visitor Pass",
                   passStyle: const TextStyle(
-                        fontSize: 25,
-                        // fontStyle: FontStyle.normal,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        // height: 1.5
-                      )
-
+                    fontSize: 25,
+                    // fontStyle: FontStyle.normal,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    // height: 1.5
+                  ),
                 ),
               ),
               sourceFilePath: 'sample/vistorpass.dart',
@@ -443,6 +443,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               sourceFilePath: 'sample/roundedImage.dart',
+            ),
+            WidgetWithCodeView(
+              title: 'Card View',
+              description: '',
+              child: SizedBox(
+                height: 300,
+                width: 220,
+                child: CardView(
+                  margin: 20,
+                  radius: 20,
+                  padding: 16,
+                  child: Container(),
+                ),
+              ),
+              sourceFilePath: 'sample/cardview.dart',
             ),
           ],
         ));
