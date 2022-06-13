@@ -40,7 +40,7 @@ class Dropdown1 extends StatelessWidget {
       items: options.map((option) {
         return DropdownMenuItem<Map<String, dynamic>>(
           value: option,
-          enabled: !option['disabled'],
+          enabled: option['disabled'] ?? true,
           child: AutoSizeText(option['label']),
         );
       }).toList(),
