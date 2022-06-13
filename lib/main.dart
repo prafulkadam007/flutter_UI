@@ -89,28 +89,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 500,
                 width: 400,
                 child: GatePassTicket(
-                  expand: 3,
-                  daystyle: const TextStyle(fontSize: 18),
-                  monthstyle: const TextStyle(fontSize: 10),
-                  weekdaystyle: const TextStyle(fontSize: 10),
-                  title: 'Anteriorsoft Pvt Ltd',
-                  titlestyle: const TextStyle(fontSize: 20),
-                  imageurl:
-                      'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
-                  subtext: 'Ajman, United Arab Emirates',
-                  subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
-                  name: 'Abulebbeh Aleks',
-                  namestyle:  const TextStyle(fontSize: 16),
-                  date: DateTime.now(),
-                  passName: "Visitor Pass",
-                  passStyle: const TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                      )
-                ),
+                    expand: 3,
+                    daystyle: const TextStyle(fontSize: 18),
+                    monthstyle: const TextStyle(fontSize: 10),
+                    weekdaystyle: const TextStyle(fontSize: 10),
+                    title: 'Anteriorsoft Pvt Ltd',
+                    titlestyle: const TextStyle(fontSize: 20),
+                    imageurl:
+                        'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
+                    subtext: 'Ajman, United Arab Emirates',
+                    subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
+                    name: 'Abulebbeh Aleks',
+                    namestyle: const TextStyle(fontSize: 16),
+                    date: DateTime.now(),
+                    passName: "Visitor Pass",
+                    passStyle: const TextStyle(
+                      fontSize: 25,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                    )),
               ),
-              sourceFilePath: 'sample/vistorpass.dart',
+              sourceFilePath: 'sample/visitorpass.dart',
             ),
             WidgetWithCodeView(
               title: 'Vistor pass',
@@ -130,17 +129,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   subtext: 'Ajman, United Arab Emirates',
                   subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
                   name: 'Abulebbeh Aleks',
-                  namestyle:  const TextStyle(fontSize: 16),
+                  namestyle: const TextStyle(fontSize: 16),
                   date: DateTime.now(),
                   passName: "Visitor Pass",
                   passStyle: const TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
-              sourceFilePath: 'sample/vistorpass.dart',
+              sourceFilePath: 'sample/visitorpass2.dart',
             ),
             WidgetWithCodeView(
               title: 'App Calendar',
@@ -231,11 +230,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   registeredDate: '15-DEC-2021',
                   registeredDatestyle:
                       TextStyle(color: Colors.black, fontSize: 20),
-                  labelStyle: TextStyle(
-                        fontSize: 10,
-                        color: Colors.black,
-                        height: 4
-                      ),
+                  labelStyle:
+                      TextStyle(fontSize: 10, color: Colors.black, height: 4),
                 ),
               ),
               sourceFilePath: 'sample/vechiledetails.dart',
@@ -388,7 +384,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Notification List Item',
-
               description:
                   'List item for notification to display notifications in a list',
 
@@ -399,10 +394,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             WidgetWithCodeView(
               title: 'Request List Item',
-
               description:
                   'List item for Request to display Requests in a list',
-
               child: SizedBox(
                 width: 450,
                 child: ListItem.request(

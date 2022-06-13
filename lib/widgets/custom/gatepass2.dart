@@ -106,36 +106,46 @@ class GatePassTicket2 extends StatelessWidget {
                         SizedBox(
                           width: (width * 0.03) / expand,
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            TextWithLabel(
-                              label: 'Company',
-                              labelStyle: const TextStyle(fontSize: 10),
-                              title: title,
-                              titlestyle: titlestyle,
-                              desc: subtext,
-                              descStyle: subtextstyle,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                TextWithLabel(
-                                  label: 'Department',
-                                  labelStyle: const TextStyle(fontSize: 10, height: 2),
-                                  title: 'HR',
-                                  titlestyle: titlestyle,
-                                ),
-                                TextWithLabel(
-                                  label: 'Approver',
-                                  labelStyle: const TextStyle(fontSize: 10, height: 2),
-                                  title: 'Zaheer',
-                                  titlestyle: titlestyle,
-                                ),
-                              ],
-                            ),
-                          ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TextWithLabel(
+                                label: 'Company',
+                                labelStyle: const TextStyle(fontSize: 10),
+                                title: title,
+                                titlestyle: titlestyle,
+                                desc: subtext,
+                                descStyle: subtextstyle,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                // crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    flex: 1,
+                                    child: TextWithLabel(
+                                      label: 'Department',
+                                      labelStyle: const TextStyle(
+                                          fontSize: 10, height: 2),
+                                      title: 'HR',
+                                      titlestyle: titlestyle,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    flex: 1,
+                                    child: TextWithLabel(
+                                      label: 'Approver',
+                                      labelStyle: const TextStyle(
+                                          fontSize: 10, height: 2),
+                                      title: 'Zaheer',
+                                      titlestyle: titlestyle,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),

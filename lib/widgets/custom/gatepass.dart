@@ -71,7 +71,7 @@ class GatePassTicket extends StatelessWidget {
                   // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: (height * 0.04) / expand),
+                    SizedBox(height: (height * 0.05) / expand),
                     RoundedImage(
                         size: (width * 0.25) / expand,
                         image: DecorationImage(
