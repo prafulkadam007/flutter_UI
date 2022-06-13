@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_lib/widgets/cardviews/card_view.dart';
 
 import '../../helpers/clippathshadow.dart';
 import '../../helpers/ticketclip.dart';
@@ -13,20 +14,21 @@ class PaymentStatus extends StatelessWidget {
   final TextStyle? headingstyle;
   final TextStyle? transcationstyle;
 
-
   final TextStyle? subtitlestyle;
   final double? iconsize;
 
-  const PaymentStatus(
-      {Key? key,
-      required this.status,
-      required this.transcationNo,
-      required this.amountpaid,
-      required this.bank,
-      this.titlestyle,
-      this.iconsize,
-      this.subtitlestyle, this.headingstyle, this.transcationstyle})
-      : super(key: key);
+  const PaymentStatus({
+    Key? key,
+    required this.status,
+    required this.transcationNo,
+    required this.amountpaid,
+    required this.bank,
+    this.titlestyle,
+    this.iconsize,
+    this.subtitlestyle,
+    this.headingstyle,
+    this.transcationstyle,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,67 +43,59 @@ class PaymentStatus extends StatelessWidget {
           offset: const Offset(0, 0), // changes position of shadow
         ),
       ],
-      child: Card(
-        margin: const EdgeInsets.all(AppMargin.m20),
-        color: Colors.white,
-        // elevation: 5.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(AppPadding.p40),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              _getStatusIcon(iconsize: iconsize),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              Text(
-                status == Status.Done
-                    ? "Payment Successful!"
-                    : "Payment Failed!",
-                style: headingstyle ?? TextStyle(
-                        fontSize: width * 0.06, fontWeight: FontWeight.w500)
-                    .copyWith(color: Colors.black),
-                // TextStyle(
-                //   color: Colors.black,
-                //   fontWeight: FontWeight.w600,
-                //   fontSize: FontSize.s23,
-                // ),
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              Text(
-                "Transaction Number : $transcationNo",
-                style:transcationstyle ?? TextStyle(
-                        fontSize: width * 0.04, fontWeight: FontWeight.w300)
-                    .copyWith(color: Colors.grey),
-                // TextStyle(
-                //   color: Colors.black54,
-                //   fontWeight: FontWeight.w400,
-                //   fontSize: FontSize.s14,
-                // ),
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              const Divider(
-                color: Colors.grey,
-                thickness: 1,
-                indent: 0.5,
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              getRow(
-                  title: 'Amount Paid:',
-                  subtitle: '$amountpaid(AED)',
-                  subtitlestyle: subtitlestyle,
-                  titlestyle: titlestyle),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              getRow(
-                  title: 'Bank:',
-                  subtitle: bank,
-                  subtitlestyle: subtitlestyle,
-                  titlestyle: titlestyle),
-            ],
-          ),
+      child: CardView(
+        margin: AppMargin.m20,
+        radius: 20,
+        padding: AppPadding.p40,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            _getStatusIcon(iconsize: iconsize),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            Text(
+              status == Status.Done ? "Payment Successful!" : "Payment Failed!",
+              style: headingstyle ??
+                  TextStyle(fontSize: width * 0.06, fontWeight: FontWeight.w500)
+                      .copyWith(color: Colors.black),
+              // TextStyle(
+              //   color: Colors.black,
+              //   fontWeight: FontWeight.w600,
+              //   fontSize: FontSize.s23,
+              // ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            Text(
+              "Transaction Number : $transcationNo",
+              style: transcationstyle ??
+                  TextStyle(fontSize: width * 0.04, fontWeight: FontWeight.w300)
+                      .copyWith(color: Colors.grey),
+              // TextStyle(
+              //   color: Colors.black54,
+              //   fontWeight: FontWeight.w400,
+              //   fontSize: FontSize.s14,
+              // ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            const Divider(
+              color: Colors.grey,
+              thickness: 1,
+              indent: 0.5,
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            getRow(
+                title: 'Amount Paid:',
+                subtitle: '$amountpaid(AED)',
+                subtitlestyle: subtitlestyle,
+                titlestyle: titlestyle),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            getRow(
+                title: 'Bank:',
+                subtitle: bank,
+                subtitlestyle: subtitlestyle,
+                titlestyle: titlestyle),
+          ],
         ),
       ),
     );
