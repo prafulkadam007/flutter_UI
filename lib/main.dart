@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/sampledata/data.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
 import 'package:flutter_ui_lib/widgets/custom/gatepass.dart';
+import 'package:flutter_ui_lib/widgets/custom/gatepass2.dart';
 import 'package:flutter_ui_lib/widgets/custom/numberplate.dart';
 import 'package:flutter_ui_lib/widgets/custom/paymentstatus.dart';
 import 'package:flutter_ui_lib/widgets/custom/vehiclidetails.dart';
@@ -82,7 +83,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: ListView(
           children: <Widget>[
             WidgetWithCodeView(
-              // height: 500,
               title: 'Vistor pass',
               description: 'Custom ui for visitor pass ',
               child: SizedBox(
@@ -90,12 +90,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 400,
                 child: GatePassTicket(
                   expand: 3,
-                  // height: 500,
                   daystyle: const TextStyle(fontSize: 18),
                   monthstyle: const TextStyle(fontSize: 10),
                   weekdaystyle: const TextStyle(fontSize: 10),
-                  company: 'Anteriorsoft Pvt Ltd',
-                  companystyle: const TextStyle(fontSize: 20),
+                  title: 'Anteriorsoft Pvt Ltd',
+                  titlestyle: const TextStyle(fontSize: 20),
                   imageurl:
                       'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
                   subtext: 'Ajman, United Arab Emirates',
@@ -106,12 +105,39 @@ class _MyHomePageState extends State<MyHomePage> {
                   passName: "Visitor Pass",
                   passStyle: const TextStyle(
                         fontSize: 25,
-                        // fontStyle: FontStyle.normal,
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
-                        // height: 1.5
                       )
-
+                ),
+              ),
+              sourceFilePath: 'sample/vistorpass.dart',
+            ),
+            WidgetWithCodeView(
+              title: 'Vistor pass',
+              description: 'Custom ui for visitor pass ',
+              child: SizedBox(
+                height: 500,
+                width: 400,
+                child: GatePassTicket2(
+                  expand: 3,
+                  daystyle: const TextStyle(fontSize: 18),
+                  monthstyle: const TextStyle(fontSize: 10),
+                  weekdaystyle: const TextStyle(fontSize: 10),
+                  title: 'Anteriorsoft Pvt Ltd',
+                  titlestyle: const TextStyle(fontSize: 20),
+                  imageurl:
+                      'https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png',
+                  subtext: 'Ajman, United Arab Emirates',
+                  subtextstyle: const TextStyle(fontSize: 15, height: 1.5),
+                  name: 'Abulebbeh Aleks',
+                  namestyle:  const TextStyle(fontSize: 16),
+                  date: DateTime.now(),
+                  passName: "Visitor Pass",
+                  passStyle: const TextStyle(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      ),
                 ),
               ),
               sourceFilePath: 'sample/vistorpass.dart',
@@ -205,6 +231,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   registeredDate: '15-DEC-2021',
                   registeredDatestyle:
                       TextStyle(color: Colors.black, fontSize: 20),
+                  labelStyle: TextStyle(
+                        fontSize: 10,
+                        color: Colors.black,
+                        height: 4
+                      ),
                 ),
               ),
               sourceFilePath: 'sample/vechiledetails.dart',
@@ -239,10 +270,10 @@ class _MyHomePageState extends State<MyHomePage> {
             WidgetWithCodeView(
               title: 'Button',
               description: 'form input button pass action',
-              child: Button1(
+              child: Button(
                 size: const Size(300, 10),
                 title: 'title',
-                onclick: () {},
+                onPressed: () {},
               ),
               sourceFilePath: 'sample/button.dart',
             ),
@@ -251,7 +282,7 @@ class _MyHomePageState extends State<MyHomePage> {
               description: 'form input Blur button pass action',
               child: SizedBox(
                 height: 200,
-                width: 500,
+                width: 400,
                 child: BlurButton(
                   onPressed: () {},
                   title: 'title',

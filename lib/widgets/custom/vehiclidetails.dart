@@ -15,6 +15,7 @@ class VehicleDetails extends StatelessWidget {
   final String vechilemodel;
   final TextStyle? vechilemodelstyle;
   final TextStyle? headingstyle;
+  final TextStyle? labelStyle;
 
   const VehicleDetails({
     Key? key,
@@ -27,6 +28,7 @@ class VehicleDetails extends StatelessWidget {
     this.registeredDatestyle,
     this.vechilemodelstyle,
     this.headingstyle,
+    this.labelStyle
   }) : super(key: key);
 
   @override
@@ -67,7 +69,7 @@ class VehicleDetails extends StatelessWidget {
             //             .copyWith(color: Colors.black, height: 1.7)),
             TextWithLabel(
               label: 'Registered Date',
-              labelStyle:TextStyle(fontSize: width * 0.04, color: Colors.black, height: 4),
+              labelStyle: labelStyle ?? TextStyle(fontSize: width * 0.04, color: Colors.black, height: 4),
               title: registeredDate,
               titlestyle: registeredDatestyle,
               // titlestyle: vehicleNumberPlatestyle ??
@@ -90,7 +92,7 @@ class VehicleDetails extends StatelessWidget {
             //                 height: 1.5)),
             TextWithLabel(
               label: 'Vehicle model',
-              labelStyle:TextStyle(fontSize: width * 0.04, color: Colors.black, height: 4),
+              labelStyle: labelStyle ?? TextStyle(fontSize: width * 0.04, color: Colors.black, height: 4),
               title: vechilemodel,
               titlestyle: vechilemodelstyle,
             ),

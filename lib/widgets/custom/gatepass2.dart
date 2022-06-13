@@ -6,7 +6,7 @@ import 'package:flutter_ui_lib/widgets/icons/rounded_image.dart';
 
 import '../../resources/values_manager.dart';
 
-class GatePassTicket extends StatelessWidget {
+class GatePassTicket2 extends StatelessWidget {
   final String imageurl;
   final String name;
   final TextStyle? namestyle;
@@ -24,25 +24,25 @@ class GatePassTicket extends StatelessWidget {
   final TextStyle? passStyle;
   final TextStyle? monthstyle;
 
-  const GatePassTicket({
-    Key? key,
-    required this.imageurl,
-    required this.name,
-    this.namestyle,
-    required this.title,
-    this.titlestyle,
-    this.expand = 1,
-    this.subtext = 'Ajman, United Arab Emirates',
-    this.subtextstyle,
-    required this.date,
-    this.weekday,
-    this.weekdaystyle,
-    this.daystyle,
-    this.monthstyle,
-    this.height,
-    this.passName = "Visitor Pass",
-    this.passStyle
-  }) : super(key: key);
+  const GatePassTicket2(
+      {Key? key,
+      required this.imageurl,
+      required this.name,
+      this.namestyle,
+      required this.title,
+      this.titlestyle,
+      this.expand = 1,
+      this.subtext = 'Ajman, United Arab Emirates',
+      this.subtextstyle,
+      required this.date,
+      this.weekday,
+      this.weekdaystyle,
+      this.daystyle,
+      this.monthstyle,
+      this.height,
+      this.passName = "Visitor Pass",
+      this.passStyle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +67,6 @@ class GatePassTicket extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all((width * 0.06) / expand),
                 child: Column(
-                  // mainAxisSize: MainAxisSize.min,
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(height: (height * 0.04) / expand),
@@ -86,24 +84,6 @@ class GatePassTicket extends StatelessWidget {
                       descStyle: passStyle,
                       align: TextAlign.center,
                     ),
-                    // Text(
-                    //   name,
-                    //   style: namestyle ??
-                    //       TextStyle(
-                    //           fontSize: (width * 0.045) / expand,
-                    //           color: Colors.black),
-                    // ),
-                    // SizedBox(height: (height * 0.01) / expand),
-                    // Text(
-                    //   "Visitor Pass",
-                    //   style: TextStyle(
-                    //     fontSize: (width * 0.07) / expand,
-                    //     fontStyle: FontStyle.normal,
-                    //   ).copyWith(
-                    //     color: Colors.black,
-                    //     fontWeight: FontWeight.w600,
-                    //   ),
-                    // ),
                     SizedBox(height: (height * 0.04) / expand),
                     const Divider(
                       color: Colors.grey,
@@ -115,6 +95,7 @@ class GatePassTicket extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(AppPadding.p5),
                           child: AppCalendar(
+                            showBorder: true,
                             date: date,
                             weekday: weekday,
                             weekdaystyle: weekdaystyle,
@@ -125,38 +106,39 @@ class GatePassTicket extends StatelessWidget {
                         SizedBox(
                           width: (width * 0.03) / expand,
                         ),
-                        TextWithLabel(
-                          title: title,
-                          titlestyle: titlestyle,
-                          desc: subtext,
-                          descStyle: subtextstyle,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TextWithLabel(
+                              label: 'Company',
+                              labelStyle: const TextStyle(fontSize: 10),
+                              title: title,
+                              titlestyle: titlestyle,
+                              desc: subtext,
+                              descStyle: subtextstyle,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                TextWithLabel(
+                                  label: 'Department',
+                                  labelStyle: const TextStyle(fontSize: 10, height: 2),
+                                  title: 'HR',
+                                  titlestyle: titlestyle,
+                                ),
+                                TextWithLabel(
+                                  label: 'Approver',
+                                  labelStyle: const TextStyle(fontSize: 10, height: 2),
+                                  title: 'Zaheer',
+                                  titlestyle: titlestyle,
+                                ),
+                              ],
+                            ),
+                          ],
                         )
-                        // Column(
-                        //   mainAxisAlignment: MainAxisAlignment.start,
-                        //   crossAxisAlignment: CrossAxisAlignment.start,
-                        //   children: [
-
-                        //     Text(company,
-                        //         style: companystyle ??
-                        //             TextStyle(
-                        //                     fontSize: (width * 0.05) / expand,
-                        //                     fontWeight: FontWeight.w300)
-                        //                 .copyWith(
-                        //                     fontWeight: FontWeightManager.bold,
-                        //                     color: Colors.black)
-                        //         ),
-                        //     SizedBox(height: (height * 0.01) / expand),
-                        //     Text(subtext,
-                        //         style: subtextstyle ??
-                        //             TextStyle(
-                        //                 fontSize: (width * 0.04) / expand,
-                        //                 fontWeight: FontWeight.w300)
-                        //         ),
-                        //   ],
-                        // )
                       ],
                     ),
-                    // SizedBox(height: (height * 0.01) / expand),
                   ],
                 ),
               ),
