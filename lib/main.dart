@@ -227,9 +227,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 500,
                 child: Center(
                   child: Dropdown1(
-                    initvalue: 'one',
-                    options: const ['one', 'two'],
+                    initvalue: const {
+                      'label': 'one',
+                      'value': 'one',
+                      'disabled': true
+                    },
+                    options: const [
+                      {'label': 'one', 'value': 'one', 'disabled': true},
+                      {'label': 'two', 'value': 'two', 'disabled': false}
+                    ],
                     hinttext: 'select one',
+                    onChange: (value) {
+                      print('selected Dropdown1 value ${value}');
+                    },
                     // pass controller to access data
                   ),
                 ),

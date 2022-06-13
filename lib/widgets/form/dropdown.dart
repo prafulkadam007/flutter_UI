@@ -4,24 +4,26 @@ import 'package:flutter/material.dart';
 import 'helpers/decorators.dart';
 
 class Dropdown1 extends StatelessWidget {
-  String? initvalue;
+  Map<String, dynamic>? initvalue;
   String? hinttext;
-  List<String> options;
+  List<Map<String, dynamic>> options;
   TextEditingController? selectvalue;
-  Dropdown1(
-      {Key? key,
-      this.initvalue,
-      this.hinttext,
-      required this.options,
-      this.selectvalue})
-      : super(key: key);
+  Function onChanged;
+  Dropdown1({
+    Key? key,
+    this.initvalue,
+    this.hinttext,
+    required this.options,
+    this.selectvalue,
+    required this.onChanged,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (initvalue != null && selectvalue != null) {
-      selectvalue!.text = initvalue!;
+      selectvalue!.text = initvalue!['value'];
     }
-    return DropdownButtonFormField<String>(
+    return DropdownButtonFormField<Map<String, dynamic>>(
       isDense: true,
       isExpanded: true,
       value: initvalue,
@@ -30,17 +32,16 @@ class Dropdown1 extends StatelessWidget {
       elevation: 16,
       style: const TextStyle(color: Colors.black, fontSize: 17),
       decoration: getInputDecoration(),
-      onChanged: (String? newValue) {
-        selectvalue!.text = newValue!;
-        // setState(() {
-        //   dropdownValue = newValue!;
-        // });
+      onChanged: (Map<String, dynamic>? newValue) {
+        selectvalue!.text = newValue!['value'];
+        onChanged(newValue);
       },
       validator: (value) => value == null ? 'field required' : null,
-      items: options.map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: AutoSizeText(value),
+      items: options.map((option) {
+        return DropdownMenuItem<Map<String, dynamic>>(
+          value: option,
+          enabled: !option['disabled'],
+          child: AutoSizeText(option['label']),
         );
       }).toList(),
     );
