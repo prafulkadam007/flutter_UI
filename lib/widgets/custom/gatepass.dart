@@ -59,9 +59,6 @@ class GatePassTicket extends StatelessWidget {
             height: height * 0.60,
             margin: EdgeInsets.all((width * 0.015) / expand),
             child: CardView(
-              margin: (width * 0.05) / expand,
-              radius: AppSize.s15,
-              padding: (width * 0.06) / expand,
               child: Column(
                 // mainAxisSize: MainAxisSize.min,
                 // mainAxisAlignment: MainAxisAlignment.center,
