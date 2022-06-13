@@ -42,15 +42,15 @@ class _AppCalendarState extends State<AppCalendar> {
                 .substring(0, 3)
                 .toUpperCase(),
             style: widget.weekdaystyle ??
-                TextStyle(fontSize: width * 0.045, color: widget.color ??  Colors.black)
+                TextStyle(fontSize: width * 0.025, color: widget.color ??  Colors.black54)
             //  TextStyle(
             //   color: Colors.black54,
             //   fontSize: FontSize.s14,
             // ),
             ),
-        AutoSizeText(DateFormat('d').format(widget.date).toString(),
+        AutoSizeText(DateFormat('dd').format(widget.date).toString(),
             style: widget.daystyle ??
-                TextStyle(fontSize: width * 0.045, color: widget.color ??  Colors.black)),
+                TextStyle(fontSize: width * 0.05, color: widget.color ??  Colors.black)),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: AppPadding.p3),
           child: Container(height: 1.0, width: 30.0, color: widget.color ??  Colors.black54),
@@ -62,7 +62,7 @@ class _AppCalendarState extends State<AppCalendar> {
                 .toUpperCase()
                 .substring(0, 3),
             style: widget.monthstyle ??
-                TextStyle(fontSize: width * 0.045, color: widget.color ??  Colors.black)),
+                TextStyle(fontSize: width * 0.025, color: widget.color ??  Colors.black)),
       ],
     );
   }

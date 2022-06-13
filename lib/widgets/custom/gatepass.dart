@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_lib/resources/font_manager.dart';
 import 'package:flutter_ui_lib/widgets/cardviews/card_view.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
+import 'package:flutter_ui_lib/widgets/textdisplayers/text_with_label.dart';
 import 'package:flutter_ui_lib/widgets/icons/rounded_icon.dart';
 import 'package:flutter_ui_lib/widgets/icons/rounded_image.dart';
 
@@ -21,26 +21,29 @@ class GatePassTicket extends StatelessWidget {
   final TextStyle? daystyle;
   final double expand;
   final double? height;
-
+  final String passName;
+  final TextStyle? passStyle;
   final TextStyle? monthstyle;
 
-  const GatePassTicket({
-    Key? key,
-    required this.imageurl,
-    required this.name,
-    this.namestyle,
-    required this.company,
-    this.companystyle,
-    this.expand = 1,
-    this.subtext = 'Ajman, United Arab Emirates',
-    this.subtextstyle,
-    required this.date,
-    this.weekday,
-    this.weekdaystyle,
-    this.daystyle,
-    this.monthstyle,
-    this.height,
-  }) : super(key: key);
+  const GatePassTicket(
+      {Key? key,
+      required this.imageurl,
+      required this.name,
+      this.namestyle,
+      required this.company,
+      this.companystyle,
+      this.expand = 1,
+      this.subtext = 'Ajman, United Arab Emirates',
+      this.subtextstyle,
+      required this.date,
+      this.weekday,
+      this.weekdaystyle,
+      this.daystyle,
+      this.monthstyle,
+      this.height,
+      this.passName = "Visitor Pass",
+      this.passStyle})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,18 +56,18 @@ class GatePassTicket extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: AppPadding.p10),
           child: Container(
-            //height: height * 0.65,
+            height: height * 0.60,
             margin: EdgeInsets.all((width * 0.015) / expand),
             child: CardView(
               margin: (width * 0.05) / expand,
               radius: AppSize.s15,
               padding: (width * 0.06) / expand,
               child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
+                // mainAxisSize: MainAxisSize.min,
+                // mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(height: (height * 0.03) / expand),
+                  SizedBox(height: (height * 0.04) / expand),
                   RoundedImage(
                       size: (width * 0.25) / expand,
                       image: DecorationImage(
@@ -72,35 +75,32 @@ class GatePassTicket extends StatelessWidget {
                         fit: BoxFit.cover,
                       )),
                   SizedBox(height: (height * 0.02) / expand),
-                  Text(
-                    name,
-                    style: namestyle ??
-                        TextStyle(
-                            fontSize: (width * 0.045) / expand,
-                            color: Colors.black),
-                    // TextStyle(
-                    //   color: Colors.black,
-                    //   fontWeight: FontWeight.w400,
-                    //   fontSize: FontSize.s20,
-                    // ),
+                  TextWithLabel(
+                    title: name,
+                    titlestyle: namestyle,
+                    desc: passName,
+                    descStyle: passStyle,
+                    align: TextAlign.center,
                   ),
-                  SizedBox(height: (height * 0.01) / expand),
-                  Text(
-                    "Visitor Pass",
-                    style: TextStyle(
-                      fontSize: (width * 0.07) / expand,
-                      fontStyle: FontStyle.normal,
-                    ).copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    // TextStyle(
-                    //   color: Colors.black,
-                    //   fontWeight: FontWeight.w600,
-                    //   fontSize: FontSize.s29,
-                    // ),
-                  ),
-                  SizedBox(height: (height * 0.05) / expand),
+                  // Text(
+                  //   name,
+                  //   style: namestyle ??
+                  //       TextStyle(
+                  //           fontSize: (width * 0.045) / expand,
+                  //           color: Colors.black),
+                  // ),
+                  // SizedBox(height: (height * 0.01) / expand),
+                  // Text(
+                  //   "Visitor Pass",
+                  //   style: TextStyle(
+                  //     fontSize: (width * 0.07) / expand,
+                  //     fontStyle: FontStyle.normal,
+                  //   ).copyWith(
+                  //     color: Colors.black,
+                  //     fontWeight: FontWeight.w600,
+                  //   ),
+                  // ),
+                  SizedBox(height: (height * 0.04) / expand),
                   const Divider(
                     color: Colors.grey,
                     thickness: 1,
@@ -121,41 +121,39 @@ class GatePassTicket extends StatelessWidget {
                       SizedBox(
                         width: (width * 0.05) / expand,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(company,
-                              style: companystyle ??
-                                  TextStyle(
-                                          fontSize: (width * 0.05) / expand,
-                                          fontWeight: FontWeight.w300)
-                                      .copyWith(
-                                          fontWeight: FontWeightManager.bold,
-                                          color: Colors.black)
-                              // TextStyle(
-                              //   color: Colors.black,
-                              //   fontWeight: FontWeight.w600,
-                              //   fontSize: FontSize.s18,
-                              // ),
-                              ),
-                          SizedBox(height: (height * 0.01) / expand),
-                          Text(subtext,
-                              style: subtextstyle ??
-                                  TextStyle(
-                                      fontSize: (width * 0.04) / expand,
-                                      fontWeight: FontWeight.w300)
-                              // TextStyle(
-                              //   color: Colors.black,
-                              //   fontWeight: FontWeight.w400,
-                              //   fontSize: FontSize.s16,
-                              // ),
-                              ),
-                        ],
+                      TextWithLabel(
+                        // label: 'Company',
+                        title: company,
+                        titlestyle: companystyle,
+                        desc: subtext,
+                        descStyle: subtextstyle,
                       )
+                      // Column(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   crossAxisAlignment: CrossAxisAlignment.start,
+                      //   children: [
+
+                      //     Text(company,
+                      //         style: companystyle ??
+                      //             TextStyle(
+                      //                     fontSize: (width * 0.05) / expand,
+                      //                     fontWeight: FontWeight.w300)
+                      //                 .copyWith(
+                      //                     fontWeight: FontWeightManager.bold,
+                      //                     color: Colors.black)
+                      //         ),
+                      //     SizedBox(height: (height * 0.01) / expand),
+                      //     Text(subtext,
+                      //         style: subtextstyle ??
+                      //             TextStyle(
+                      //                 fontSize: (width * 0.04) / expand,
+                      //                 fontWeight: FontWeight.w300)
+                      //         ),
+                      //   ],
+                      // )
                     ],
                   ),
-                  SizedBox(height: (height * 0.01) / expand),
+                  // SizedBox(height: (height * 0.01) / expand),
                 ],
               ),
             ),

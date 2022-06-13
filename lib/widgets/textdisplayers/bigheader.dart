@@ -30,9 +30,6 @@ class BigHeader extends StatelessWidget {
               children: const [],
             ),
             image,
-            // SizedBox(
-            //   height: 6 * unitHeightValue,
-            // ),
             AutoSizeText(
               title,
               maxLines: 2,
