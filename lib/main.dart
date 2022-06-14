@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_lib/sampledata/data.dart';
+import 'package:flutter_ui_lib/widgets/appbar/custom_app_bar.dart';
 import 'package:flutter_ui_lib/widgets/cardviews/card_view.dart';
 import 'package:flutter_ui_lib/widgets/custom/app_calendar.dart';
 import 'package:flutter_ui_lib/widgets/custom/gatepass.dart';
@@ -72,13 +73,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var space = const SizedBox(height: 20.0);
     return Scaffold(
-        appBar: AppBar(
+        appBar: CustomAppBar(
           backgroundColor: const Color(0xFF242526),
           foregroundColor: Colors.white,
           centerTitle: true,
+          leadingActions: IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white),
+            onPressed: () => {print("object")},
+          ),
+          trailingActions: <Widget>[
+            IconButton(
+              icon:
+                  const Icon(Icons.account_circle_rounded, color: Colors.white),
+              onPressed: () => {},
+            ),
+          ],
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: AutoSizeText(widget.title),
+          title: widget.title,
         ),
         body: ListView(
           children: <Widget>[
