@@ -76,7 +76,7 @@ class TextDisplayers extends StatelessWidget {
     }
 
     if (content) {
-      return Conttent(
+      return Content(
         body: body ?? 'title',
         bodystyle:
             bodystyle ?? const TextStyle(fontSize: 20, color: Colors.white),

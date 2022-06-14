@@ -1,6 +1,6 @@
 import 'package:flutter_ui_lib/widgets/textdisplayers/textDisplayers.dart';
 
-TextDisplayers.Conttent(
+TextDisplayers.Content(
   body:
       'body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen, repeact : body must be long enough to show the text in small and large screen, so that the text is not cut off in small screen',
   bodystyle: TextStyle(fontSize: 20, color: Colors.white),
