@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-class Conttent extends StatefulWidget {
+class Content extends StatefulWidget {
   final String title;
   final TextStyle? titlestyle;
   final String body;
@@ -9,7 +9,7 @@ class Conttent extends StatefulWidget {
   final TextStyle? readmorestyle;
 
   final String? imgurl;
-  const Conttent({
+  const Content({
     Key? key,
     required this.title,
     required this.body,
@@ -19,10 +19,10 @@ class Conttent extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<Conttent> createState() => _ConttentState();
+  State<Content> createState() => _ContentState();
 }
 
-class _ConttentState extends State<Conttent> {
+class _ContentState extends State<Content> {
   late bool _isExpanded = false;
 
   @override
