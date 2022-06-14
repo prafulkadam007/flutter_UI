@@ -5,6 +5,7 @@ class CardView extends StatelessWidget {
   final double? margin;
   final double? radius;
   final double? padding;
+  final double expand;
   final Widget child;
 
   const CardView({
@@ -12,6 +13,7 @@ class CardView extends StatelessWidget {
     this.margin,
     this.radius,
     this.padding,
+    this.expand = 1,
     required this.child,
   }) : super(key: key);
 
@@ -20,14 +22,14 @@ class CardView extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Card(
-      margin: EdgeInsets.all(margin ?? (width * 0.05) / 1),
+      margin: EdgeInsets.all(margin ?? (width * 0.05) / expand),
       color: Colors.white,
       // elevation: 5.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(radius ?? AppSize.s15),
       ),
       child: Padding(
-        padding: EdgeInsets.all(padding ?? (width * 0.06) / 1),
+        padding: EdgeInsets.all(padding ?? (width * 0.06) / expand),
         child: child,
       ),
     );
