@@ -237,7 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       {'label': 'two', 'value': 'two', 'disabled': false}
                     ],
                     hinttext: 'select one',
-                    onChange: (value) {
+                    onChanged: (value) {
                       print('selected Dropdown1 value ${value}');
                     },
                     // pass controller to access data
