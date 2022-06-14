@@ -43,10 +43,24 @@ class AssetDisplay extends StatelessWidget {
       );
     }
     if (type == AssetType.lottienetwork) {
-      return Lottie.asset(src, width: width, height: height, fit: fit);
+      return Lottie.asset(
+        src,
+        width: width,
+        height: height,
+        fit: fit,
+        repeat: true,
+        animate: true,
+      );
     }
     if (type == AssetType.lottieasset) {
-      return Lottie.network(src, width: width, height: height, fit: fit);
+      return Lottie.network(
+        src,
+        width: width,
+        height: height,
+        fit: fit,
+        repeat: true,
+        animate: true,
+      );
     }
     return const Text('something went wrong');
   }
