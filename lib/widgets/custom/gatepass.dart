@@ -11,8 +11,8 @@ class GatePassTicket extends StatelessWidget {
   final String imageurl;
   final String name;
   final TextStyle? namestyle;
-  final String company;
-  final TextStyle? companystyle;
+  final String title;
+  final TextStyle? titlestyle;
   final String subtext;
   final TextStyle? subtextstyle;
   final DateTime date;
@@ -25,25 +25,25 @@ class GatePassTicket extends StatelessWidget {
   final TextStyle? passStyle;
   final TextStyle? monthstyle;
 
-  const GatePassTicket(
-      {Key? key,
-      required this.imageurl,
-      required this.name,
-      this.namestyle,
-      required this.company,
-      this.companystyle,
-      this.expand = 1,
-      this.subtext = 'Ajman, United Arab Emirates',
-      this.subtextstyle,
-      required this.date,
-      this.weekday,
-      this.weekdaystyle,
-      this.daystyle,
-      this.monthstyle,
-      this.height,
-      this.passName = "Visitor Pass",
-      this.passStyle})
-      : super(key: key);
+  const GatePassTicket({
+    Key? key,
+    required this.imageurl,
+    required this.name,
+    this.namestyle,
+    required this.title,
+    this.titlestyle,
+    this.expand = 1,
+    this.subtext = 'Ajman, United Arab Emirates',
+    this.subtextstyle,
+    required this.date,
+    this.weekday,
+    this.weekdaystyle,
+    this.daystyle,
+    this.monthstyle,
+    this.height,
+    this.passName = "Visitor Pass",
+    this.passStyle
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class GatePassTicket extends StatelessWidget {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  SizedBox(height: (height * 0.04) / expand),
+                  SizedBox(height: (height * 0.05) / expand),
                   RoundedImage(
                       size: (width * 0.25) / expand,
                       image: DecorationImage(
@@ -117,12 +117,12 @@ class GatePassTicket extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: (width * 0.05) / expand,
+                        width: (width * 0.03) / expand,
                       ),
                       TextWithLabel(
                         // label: 'Company',
-                        title: company,
-                        titlestyle: companystyle,
+                        title: title,
+                        titlestyle: titlestyle,
                         desc: subtext,
                         descStyle: subtextstyle,
                       )

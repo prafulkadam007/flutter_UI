@@ -2,22 +2,26 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import '../../resources/values_manager.dart';
 
-class Button1 extends StatelessWidget {
+class Button extends StatelessWidget {
   final String title;
   final TextStyle? titlestyle;
-  final Function? onclick;
+  final Function? onPressed;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? buttonstylepadding;
+  final Color? primaryColor;
+  final Color? bgColor;
 
   final Size? size;
-  const Button1(
+  const Button(
       {Key? key,
       required this.title,
-      this.onclick,
+      this.onPressed,
       this.titlestyle,
       this.size,
       this.buttonstylepadding,
-      this.padding})
+      this.padding,
+      this.primaryColor,
+      this.bgColor})
       : super(key: key);
 
   @override
@@ -39,13 +43,13 @@ class Button1 extends StatelessWidget {
         ),
         style: TextButton.styleFrom(
           minimumSize: size ?? Size(MediaQuery.of(context).size.width - 50, 50),
-          primary: Colors.white, //Text Color
+          primary: primaryColor ?? Colors.white, //Text Color
           padding: buttonstylepadding ?? EdgeInsets.all(width * 0.03),
-          backgroundColor: Colors.black, //Button Background Color
+          backgroundColor: bgColor ?? Colors.black, //Button Background Color
         ),
         onPressed: () {
-          if (onclick != null) {
-            onclick!();
+          if (onPressed != null) {
+            onPressed!();
           }
         },
       ),
