@@ -312,21 +312,6 @@ class _MyHomePageState extends State<MyHomePage> {
               sourceFilePath: 'sample/footer.dart',
             ),
             WidgetWithCodeView(
-              title: 'Overview Tile',
-              description: 'text displayer overview tile',
-              child: SizedBox(
-                height: 200,
-                width: 500,
-                child: TextDisplayers.overViewTile(
-                  subTitle: 'subtitle',
-                  subTitleColor: Colors.white,
-                  title: 'title',
-                  titleColor: Colors.white,
-                ),
-              ),
-              sourceFilePath: 'sample/overViewTile.dart',
-            ),
-            WidgetWithCodeView(
               title: 'Header',
               description: 'Display Header',
               child: SizedBox(
