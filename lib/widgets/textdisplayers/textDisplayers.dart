@@ -5,14 +5,12 @@ import 'bigheader.dart';
 import 'captionbgblur.dart';
 import 'content.dart';
 import 'header.dart';
-import 'overview_tile.dart';
 
 class TextDisplayers extends StatelessWidget {
   late bool bigHeader = false;
   late bool captionBgBlur = false;
   late bool content = false;
   late bool header = false;
-  late bool overViewTile = false;
 
   late String title;
   late TextStyle? titlestyle;
@@ -52,15 +50,6 @@ class TextDisplayers extends StatelessWidget {
   })  : header = true,
         super(key: key);
 
-  TextDisplayers.overViewTile(
-      {Key? key,
-      required this.title,
-      required this.subTitle,
-      this.subTitleColor,
-      this.titleColor})
-      : overViewTile = true,
-        super(key: key);
-
   @override
   Widget build(BuildContext context) {
     if (bigHeader) {
@@ -72,11 +61,11 @@ class TextDisplayers extends StatelessWidget {
       );
     }
     if (captionBgBlur) {
-      return const CaptionBgblur();
+      return const CaptionBgblur(title: "Instrumental in Past... \nInvested in Future",);
     }
 
     if (content) {
-      return Conttent(
+      return Content(
         body: body ?? 'title',
         bodystyle:
             bodystyle ?? const TextStyle(fontSize: 20, color: Colors.white),
@@ -91,14 +80,6 @@ class TextDisplayers extends StatelessWidget {
     if (header) {
       return Header(
         title: title,
-      );
-    }
-    if (overViewTile) {
-      return OverviewTile(
-        subTitle: subTitle,
-        subTitleColor: subTitleColor ?? Colors.white,
-        title: title,
-        titleColor: titleColor ?? Colors.white,
       );
     }
 
