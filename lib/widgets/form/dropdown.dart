@@ -7,22 +7,22 @@ class Dropdown1 extends StatelessWidget {
   Map<String, dynamic>? initvalue;
   String? hinttext;
   List<Map<String, dynamic>> options;
-  //TextEditingController? selectvalue;
+  TextEditingController? selectvalue;
   Function onChanged;
   Dropdown1({
     Key? key,
     this.initvalue,
     this.hinttext,
     required this.options,
-    //this.selectvalue,
+    this.selectvalue,
     required this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    /*if (initvalue != null && selectvalue != null) {
+    if (initvalue != null && selectvalue != null) {
       selectvalue!.text = initvalue!['value'];
-    }*/
+    }
     return DropdownButtonFormField<Map<String, dynamic>>(
       isDense: true,
       isExpanded: true,
@@ -33,7 +33,7 @@ class Dropdown1 extends StatelessWidget {
       style: const TextStyle(color: Colors.black, fontSize: 17),
       decoration: getInputDecoration(),
       onChanged: (Map<String, dynamic>? newValue) {
-        //selectvalue!.text = newValue!['value'];
+        selectvalue!.text = newValue!['value'];
         onChanged(newValue);
       },
       validator: (value) => value == null ? 'field required' : null,
