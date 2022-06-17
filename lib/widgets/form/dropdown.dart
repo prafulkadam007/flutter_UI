@@ -33,7 +33,7 @@ class Dropdown1 extends StatelessWidget {
       style: const TextStyle(color: Colors.black, fontSize: 17),
       decoration: getInputDecoration(),
       onChanged: (Map<String, dynamic>? newValue) {
-        selectvalue!.text = newValue!['value'];
+        //selectvalue!.text = newValue!['value'];
         onChanged(newValue);
       },
       validator: (value) => value == null ? 'field required' : null,
