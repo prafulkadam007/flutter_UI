@@ -7,7 +7,7 @@ class Dropdown1 extends StatelessWidget {
   Map<String, dynamic>? value;
   String? hinttext;
   List<Map<String, dynamic>> options;
-  TextEditingController? selectvalue;
+  //TextEditingController? selectvalue;
   Function onChanged;
   Dropdown1({
     Key? key,
