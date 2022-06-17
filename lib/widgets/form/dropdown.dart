@@ -4,29 +4,29 @@ import 'package:flutter/material.dart';
 import 'helpers/decorators.dart';
 
 class Dropdown1 extends StatelessWidget {
-  Map<String, dynamic>? initvalue;
+  Map<String, dynamic>? value;
   String? hinttext;
   List<Map<String, dynamic>> options;
   TextEditingController? selectvalue;
   Function onChanged;
   Dropdown1({
     Key? key,
-    this.initvalue,
+    this.value,
     this.hinttext,
     required this.options,
-    this.selectvalue,
+    //this.selectvalue,
     required this.onChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (initvalue != null && selectvalue != null) {
+    /*if (initvalue != null && selectvalue != null) {
       selectvalue!.text = initvalue!['value'];
-    }
+    }*/
     return DropdownButtonFormField<Map<String, dynamic>>(
       isDense: true,
       isExpanded: true,
-      value: initvalue,
+      value: value,
       icon: const Icon(Icons.keyboard_arrow_down_outlined),
       iconSize: 30,
       elevation: 16,
